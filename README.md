@@ -69,7 +69,10 @@ jogo-detona-ralph/
 
 This game is inspired by Disney's Wreck-It Ralph character and was created for educational purposes.
 
-<br><br><br>
+<br>
+
+# [Clique aqui para testar o jogo]('https://maxwelldeveloper7.github.io/jogo-detona-ralph/')
+<br><br>
 
 
 # Jogo Detona Ralph
