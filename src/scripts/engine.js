@@ -6,13 +6,15 @@ const state = {
         squares: document.querySelectorAll(".square"),
         enemy: document.querySelector(".enemy"),
         timeLeft: document.querySelector("#time-left"),
-        score: document.querySelector("#score")
+        score: document.querySelector("#score"),
+        lives: document.querySelector("#lives")
     },
     values: {
         gameVelocity: 700,
         hitPosition: 0,
         result: 0,
         currentTime: 60,
+        lives:7,
     },
     actions: {
         timerId: setInterval(randomSquare, 600),
@@ -24,10 +26,16 @@ const state = {
  *  Função que conta o tempo restante do jogo
  */
 function countDown(){
+    // diminui o um segundo do tempo atual a cada segundo que sepassa
     state.values.currentTime--;
+    // renderiza o tempo atual na tela
     state.view.timeLeft.textContent = state.values.currentTime;
-    if(state.values.currentTime <= 0){
-        alert("Game Over! O seu resultado foi: " + state.values.result);
+    // se o tempo acabar ou o jogador perder as 7 vidas o jogo encerra
+    if(state.values.currentTime <= 0 || state.values.lives === 0){
+        // exibe uma janela com a mensagem abaixo
+        alert("Game Over! O seu resultado foi: " + state.values.result
+            + "\n\nPara jogar novamente, atualize a página."
+        );
         clearInterval(state.actions.countDownTimerId)
         clearInterval(state.actions.timerId)
     }
@@ -39,8 +47,11 @@ function countDown(){
  * @param {*} audioName 
  */
 function playSound(audioName) {
+    // armazena o nome e caminho do arquivo de audio
     let audio = new Audio(`./src/audios/${audioName}.m4a`);
+    // ajusta o volume para 20%
     audio.volume = 0.2;
+    // toca o arquivo de audio
     audio.play();
 }
 
@@ -67,12 +78,26 @@ function randomSquare(){
  */
 function addListenerHitBox(){
     state.view.squares.forEach((square) => {
+        //adiciona o evento do clicar do mouse em cada quadrado, e executa o código abaixo
         square.addEventListener("mousedown", () => {
+            //se acertar
             if(square.id === state.values.hitPosition){
+                //aumenta o valor dos pontos
                 state.values.result ++
+                //renderiza na tela o novo score
                 state.view.score.textContent = state.values.result;
+                //seta o valor null para a variável hitPosition
                 state.values.hitPosition = null;
+                //toca o som de acerto
                 playSound("hit");
+            //se não acertar
+            } else {
+                //diminui o numero de vidas
+                state.values.lives --
+                // renderiza na tela a quantidade de vidas
+                state.view.lives.textContent = state.values.lives;
+                //toca o som de falha
+                playSound("miss");
             }
         });
     })
