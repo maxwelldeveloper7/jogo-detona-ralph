@@ -9,12 +9,31 @@ const state = {
         score: document.querySelector("#score")
     },
     values: {
-        timerId: null,
         gameVelocity: 600,
         hitPosition: 0,
-        result: 0
+        result: 0,
+        currentTime: 60,
+    },
+    actions: {
+        timerId: setInterval(randomSquare, 600),
+        countDownTimerId: setInterval(countDown, 1000)        
     }
 };
+
+/**
+ *  Função que conta o tempo restante do jogo
+ */
+function countDown(){
+    state.values.currentTime--;
+    state.view.timeLeft.textContent = state.values.currentTime;
+    if(state.values.currentTime <= 0){
+        alert("Game Over! O seu resultado foi: " + state.values.result);
+        clearInterval(state.actions.countDownTimerId)
+        clearInterval(state.actions.timerId)
+        state.values.result = 0;
+        state.view.score.textContent = state.values.result;
+    }
+}
 
 /**
  * Função que sorteia um quadrado aleatório
@@ -33,12 +52,6 @@ function randomSquare(){
     state.values.hitPosition = randomSquare.id
 }
 
-/**
- * Função que move o inimigo
- */
-function moveEnemy(){
-    state.values.timerId = setInterval(randomSquare, state.values.gameVelocity);
-}
 
 /**
  * Função que adiciona o listener de click no quadrado
@@ -59,7 +72,6 @@ function addListenerHitBox(){
  * Função que inicia o jogo
  */
 function initialize() {
-    moveEnemy();
     addListenerHitBox();
 }
 
