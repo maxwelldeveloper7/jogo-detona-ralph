@@ -71,7 +71,7 @@ This game is inspired by Disney's Wreck-It Ralph character and was created for e
 
 <br>
 
-# [Clique aqui para testar o jogo]('https://maxwelldeveloper7.github.io/jogo-detona-ralph/')
+[Clique aqui para testar o jogo]('https://maxwelldeveloper7.github.io/jogo-detona-ralph/')
 <br><br>
 
 
