@@ -80,8 +80,8 @@ function addListenerHitBox(){
     state.view.squares.forEach((square) => {
         //adiciona o evento do clicar do mouse em cada quadrado, e executa o código abaixo
         square.addEventListener("mousedown", () => {
-            //se acertar
-            if(square.id === state.values.hitPosition){
+            //se acertar e o jogador ainda tiver vidas
+            if(square.id === state.values.hitPosition && state.values.lives !==0){
                 //aumenta o valor dos pontos
                 state.values.result ++
                 //renderiza na tela o novo score
@@ -91,14 +91,23 @@ function addListenerHitBox(){
                 //toca o som de acerto
                 playSound("hit");
             //se não acertar
-            } else {
-                //diminui o numero de vidas
-                state.values.lives --
-                // renderiza na tela a quantidade de vidas
-                state.view.lives.textContent = state.values.lives;
-                //toca o som de falha
-                playSound("miss");
             }
+            // evita que 
+            else {
+                /* verifica se as vidas já acabaram e evita que 
+                fiquem com valor negativo*/
+                if(state.values.lives === 0){
+                    state.view.lives.textContent = "0";
+                } else {
+                    //diminui o numero de vidas
+                    state.values.lives --
+                    // renderiza na tela a quantidade de vidas
+                    state.view.lives.textContent = state.values.lives;
+                    //toca o som de falha
+                    playSound("miss");
+                }
+            }
+            
         });
     })
 }
