@@ -9,7 +9,7 @@ const state = {
         score: document.querySelector("#score")
     },
     values: {
-        gameVelocity: 600,
+        gameVelocity: 700,
         hitPosition: 0,
         result: 0,
         currentTime: 60,
@@ -30,9 +30,14 @@ function countDown(){
         alert("Game Over! O seu resultado foi: " + state.values.result);
         clearInterval(state.actions.countDownTimerId)
         clearInterval(state.actions.timerId)
-        state.values.result = 0;
-        state.view.score.textContent = state.values.result;
     }
+}
+
+
+function playSound() {
+    let audio = new Audio("./src/audios/hit.m4a");
+    audio.volume = 0.2;
+    audio.play();
 }
 
 /**
@@ -63,6 +68,7 @@ function addListenerHitBox(){
                 state.values.result ++
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
+                playSound();
             }
         });
     })
