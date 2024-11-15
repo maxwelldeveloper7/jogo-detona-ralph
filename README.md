@@ -60,7 +60,7 @@ jogo-detona-ralph/
 ## ⚙️ Game Mechanics
 
 - The game runs on a timer that updates every second
-- Ralph's position changes every 700ms
+- Ralph's position changes every 1000ms
 - Sound effects play at 20% volume on successful hits
 - Score increases by 1 for each successful hit
 - Lives decrease by 1 for each miss
@@ -137,7 +137,7 @@ jogo-detona-ralph/
 ## Dinâmica do Jogo
 
 - O jogo funciona com um cronômetro que é atualizado a cada segundo
-- A posição de Ralph muda a cada 7 segundos
+- A posição de Ralph muda a cada segundo
 - Os efeitos sonoros são reproduzidos com volume de 20% em sucessos bem-sucedidos
 - A pontuação aumenta em 1 para cada acerto bem-sucedido
 - Vidas diminuem em 1 para cada erro
