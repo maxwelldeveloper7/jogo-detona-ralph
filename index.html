@@ -17,37 +17,49 @@
     />
     
     <!-- Folhas de Estilo -->
+    
+    <!-- reseta a estilização padrão do navegador -->
     <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/main.css">
+    <!-- define uma nova estilização para a página -->
+    <link rel="stylesheet" href="./src/styles/main.css"> 
   </head>
 
   <body>
+    <!-- Conteúdo da Página -->
     <div class="container">
-        <div class="menu">
+      <!--Menu  -->
+      <div class="menu">
+            <!-- Menu Time Left -->
             <div class="menu-time">
                 <h2>Time Left</h2>
                 <h2 id="time-left">60</h2>
             </div>
+            <!-- Menu Your Score -->
             <div class="menu-score">
                 <h2>Your Score</h2>
                 <h2 id="score">0</h2>
             </div>
+            <!-- Menu vidas do jogador -->
             <div class="menu-lives">
                 <img src="./src/images/player.png" alt="foto do jogador">
                 <h2>x<span id="lives">7</span></h2>
             </div>
         </div>
+        <!-- Painel de janelas -->
         <div class="panel">
+          <!-- Primeira linha de janelas -->
           <div class="panel-row">
             <div class="square" id="1"></div>
             <div class="square" id="2"></div>
             <div class="square" id="3"></div>
           </div>
+          <!-- Segunda linha de janelas -->
           <div class="panel-row">
             <div class="square" id="4"></div>
             <div class="square" id="5"></div>
             <div class="square" id="6"></div>
           </div>
+          <!-- Terceira linha de janelas -->
           <div class="panel-row">
             <div class="square" id="7"></div>
             <div class="square" id="8"></div>
@@ -55,6 +67,7 @@
           </div>
         </div>
     </div>
+    <!-- Define o arquivo javascript que tratará a lógica do jogo -->
     <script defer src="./src/scripts/engine.js"></script>
   </body>
 </html>
