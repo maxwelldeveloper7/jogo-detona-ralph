@@ -10,14 +10,13 @@ const state = {
         lives: document.querySelector("#lives")
     },
     values: {
-        gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
         currentTime: 60,
         lives:7,
     },
     actions: {
-        timerId: setInterval(randomSquare, 600),
+        timerId: setInterval(randomSquare, 700),
         countDownTimerId: setInterval(countDown, 1000)        
     }
 };
