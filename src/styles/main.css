@@ -1,57 +1,63 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-image: url(../images/wall.png);
+.container{/* Estilização do conteúdo da página*/
+    display: flex; /* Define posicionamento flexivel que se ajusta ao tamanho da tela*/
+    flex-direction: column; /* Define que os elementos ficaram dispostos em uma coluna*/
+    align-items: center; /* Define o alinhamento vertical centralizando*/
+    height: 100vh; /* Define que a altura da página será da mesma altura da tela*/
+    background-image: url(../images/wall.png); /* Define uma imangem de fundo na tela*/
 }
 
-.menu{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 90px;
-    width: 100%;
-    background-color: #000000;
-    color: #ffffff;
-    border-bottom: 5px solid #ffd700;
+.menu{/* Estilização do menu da página*/
+    display: flex; /* Define posicionamento flexivel que se ajusta ao tamanho da tela*/
+    justify-content: space-around; /* Define que os componentes do menu serão posicionados
+    de justificada com um espaço igual entre eles*/
+    align-items: center;/* Define um alinhamento centralizando na vertical*/
+    height: 90px; /* Define altura de 90 píxels*/
+    width: 100%; /* Define uma lartura de 100% da tela*/
+    background-color: #000000; /* Define uma cor preta ao fundo*/
+    color: #ffffff; /* Define a cor branca para o texto*/
+    border-bottom: 5px solid #ffd700; /* Define uma borda inferior de 5 píxels, sólida e 
+    de  cor dourada*/
 }
 
-.panel {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+.panel {/* Estiliza o painel que conterá as janelas*/
+    margin-top: 1rem; /* Define uma margem inferior de 1rem(unidade relativa, equivale a 16px*/
+    display: flex; /* Define posicionamento flexivel que se ajusta ao tamanho da tela*/
+    justify-content: center; /* Define que os componentes do menu serão posicionados 
+    justificadamente ao centro*/
+    width: 100vw; /* Define que a largura do painel será da mesma largura da tela*/
 
 }
 
-.square {
-    height: 7.34rem;
+.square { /* Estiliza cada janela*/
+    height: 7.34rem;/* Define largura e alta de cada janela*/
     width: 7.34rem;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: #1aeaa5;
+    border: 1px solid #000000; /* Define uma borda de 1 píxel sólida e de cor preta*/
+    background-color: #1aeaa5; /* Define a cor de fundo de cada janela*/
 }
 
-.enemy {
-    background-image: url('../images/ralph.png');
-    background-size: cover;
+.enemy { /* Estiliza a imagem do Ralph*/
+    background-image: url('../images/ralph.png'); /* Define o caminho para o arquivo de imagem*/
+    background-size: cover; /* Define que imagem ocupará completamente o espaço da janela*/
 }
 
-.menu-lives{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.menu-lives{ /* Estiliza o submenu que contabiliza as vidas*/
+    display: flex; /* Define posicionamento flexivel que se ajusta ao tamanho da tela*/
+    align-items: center; /* Define um alinhamento centralizando na vertical*/
+    justify-content: center; /* Define que os componentes do menu serão posicionados 
+    justificadamente ao centro*/
 }
 
 .menu-time h2:nth-child(1), .menu-score h2:nth-child(1) {
-    color: #ff0000;
+    color: #ff0000; /* Estiliza os 2 primeiros parágrafos dos submenus Time Left e
+    Your Score para que tenham a cor vermelha*/
 }
 
 .menu-time h2:nth-child(2), .menu-score h2:nth-child(2) {
-    margin-top: 10px;
+    margin-top: 10px; /* Estiliza os 2 segundos parágrafos dos submenus Time Left e
+    Your Score para que tenham uma margem superior de 10px*/
 }
 
-.menu-lives img {
-    width: 60px;
+.menu-lives img { /* Estiliza a imagem do jogador*/
+    width: 60px; /*Define uma largura de 60 píxels*/
 }
 
